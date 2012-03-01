@@ -14,6 +14,10 @@ When /^I press "Create Project"$/ do
   click_button "Create Project"
 end
 
-Then /^I should see "Project has been created."$/ do
-  page.should have_content('Project has been created')
+Then /the project page for "([^\"]*)"$/ do |name|
+  current_url == project_path(Project.find_by_name!(name))
+end
+
+Then /^I should see "([^"]*)"$/ do |text|
+  page.should have_content(text)
 end
