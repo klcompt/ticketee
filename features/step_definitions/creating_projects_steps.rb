@@ -6,12 +6,12 @@ When /^I follow "([^\"]*)"$/ do |name|
   click_link name
 end
 
-When /^I fill in "Name" with "TextMate 2"$/ do
-  fill_in 'Name', :with => 'TextMate 2'
+When /^I fill in "([^\"]*)" with "([^\"]*)"$/ do |name, value|
+  fill_in name, :with => value
 end
 
-When /^I press "Create Project"$/ do
-  click_button "Create Project"
+When /^I press "([^\"]*)"$/ do |but_value|
+  click_button but_value
 end
 
 Then /the project page for "([^\"]*)"$/ do |name|
