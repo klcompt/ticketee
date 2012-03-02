@@ -2,8 +2,8 @@ Given /^I am on the homepage$/ do
   visit root_path
 end
 
-When /^I follow "New Project"$/ do
-  click_link "New Project"
+When /^I follow "([^\"]*)"$/ do |name|
+  click_link name
 end
 
 When /^I fill in "Name" with "TextMate 2"$/ do
